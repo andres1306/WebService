@@ -141,7 +141,7 @@
                 android:id="@+id/btnadicionar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Adicionar"
+                android:text="Guardar"
                 android:onClick="adicionar_usuario"/>
 
             <Button
@@ -153,11 +153,12 @@
                 android:text="Consultar" />
 
             <Button
-                android:id="@+id/btnmodificar"
+                android:id="@+id/btnEliminar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="Modificar" />
+                android:text="Eliminar"
+                android:onClick="Eliminar_Usuarios"/>
 
 
         </LinearLayout>
@@ -180,14 +181,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="Limpiar" />
+                android:text="Limpiar"
+                android:onClick="limpiar"
+                />
 
             <Button
                 android:id="@+id/btnregresar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="Regresar" />
+                android:text="Regresar"
+                android:onClick="Regresar"
+                />
 
         </LinearLayout>
     </LinearLayout>
