@@ -174,7 +174,8 @@
                 android:id="@+id/btnanular"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Anular" />
+                android:text="Anular"
+                android:onClick="anular"/>
 
             <Button
                 android:id="@+id/btnlimpiar"

@@ -1,4 +1,6 @@
 <?php 
+if (isset($_REQUEST['user']) && isset($_REQUEST['clave']) && isset($_REQUEST['nombre']) && isset($_REQUEST['correo']))
+{
 /*$usr=$_POST['usr'];
 $clave=$_POST['clave'];
 $nombre=$_POST['nombre'];
@@ -18,4 +20,9 @@ else
 	echo "Correo ya existe....";
 }
 mysqli_close($cnx);
- ?>
+}
+else
+{
+	echo "Debe especificar usr, clave, nombre y correo, respectivamente";
+}
+?>

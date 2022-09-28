@@ -178,6 +178,52 @@ public class UsuariosActivity extends AppCompatActivity implements Response.List
          }
         }
 
+        public void anular (View view)
+        {
+            if(sw==0){
+                Toast.makeText(this, "Debe primero consultar", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                sw=0;
+                usr = JetUsuario.getText().toString();
+                if (usr.isEmpty()) {
+                    Toast.makeText(this, "El usuario es obligatorios", Toast.LENGTH_SHORT).show();
+                    jetcorreo.requestFocus();
+                } else {
+                    url = "http://172.16.58.20:80/Empresa6/anula.php";
+                    StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    Limpiar_campos();
+                                    Toast.makeText(getApplicationContext(), "Anulacion exitosa !", Toast.LENGTH_LONG).show();
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    Toast.makeText(getApplicationContext(), "Error al anular registro!", Toast.LENGTH_LONG).show();
+                                    sw = 0;
+                                }
+                            }
+                    ) {
+                        @Override
+                        protected Map<String, String> getParams() {
+                            Map<String, String> params = new HashMap<String, String>();
+                            params.put("usr", JetUsuario.getText().toString().trim());
+                            return params;
+                        }
+                    };
+                    RequestQueue requestQueue = Volley.newRequestQueue(this);
+                    requestQueue.add(postRequest);
+                }
+            }
+
+        }
+
+
+
+
         public void limpiar(View view){
         Limpiar_campos();
         }

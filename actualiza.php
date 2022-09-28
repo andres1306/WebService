@@ -1,5 +1,5 @@
 <?php 
-if (isset($_REQUEST['correo']) && isset($_REQUEST['clave']) && isset($_REQUEST['nombre']) && isset($_REQUEST['correo']))
+if (isset($_REQUEST['user']) && isset($_REQUEST['clave']) && isset($_REQUEST['nombre']) && isset($_REQUEST['correo']))
 {
 	$usr=$_REQUEST['usr'];
 	$clave=$_REQUEST['clave'];
